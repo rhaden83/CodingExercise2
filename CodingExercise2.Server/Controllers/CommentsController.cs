@@ -6,6 +6,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CodingExercise2.Server.Controllers
 {
@@ -39,7 +40,7 @@ namespace CodingExercise2.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddComment(AddCommentRequest request)
+        public async Task<ActionResult> AddComment(AddCommentRequest request)
         {
             if((request.Username?.Length ?? 0) == 0)
             {
@@ -61,7 +62,7 @@ namespace CodingExercise2.Server.Controllers
             var comment = new Comment { Username = request.Username, Content = request.Comment, CreationTimestamp = DateTime.Now };
             _databaseContext.Comments.Add(comment);
             _databaseContext.SaveChanges();
-            _hub.Clients.All.SendAsync("broadcast", JsonConvert.SerializeObject(comment, JsonSerializerSettings));
+            await _hub.Clients.All.SendAsync("broadcast", JsonConvert.SerializeObject(comment, JsonSerializerSettings));
 
             return NoContent();
         }
