@@ -1,0 +1,77 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+table {
+  width: 25%;
+  margin: auto;
+  font-size: large;
+}
+
+input {
+  width: 75%;
+  margin-left: auto;
+}
+
+textarea {
+  width: 500px;
+  -webkit-box-sizing: border-box;  /* Safari/Chrome, other WebKit browsers */
+  -moz-box-sizing: border-box;     /* Firefox, other Gecko browsers */
+  box-sizing: border-box;          /* Opera/IE 8+ */
+}
+
+.main-div {
+  width: 500px;
+  margin: auto;
+  font-size: large;
+}
+
+.header-div {
+  margin: 0.5em 0;
+  text-align: center;
+  font-size: 3em;
+}
+
+.flex-div {
+  display: flex;
+  align-items: center;
+}
+
+.row-div {
+  margin-bottom: 0.75em;
+}
+
+.bottom-div {
+  margin-bottom: 3em;
+}
+
+.bottom-right-div {
+  margin-left: auto;
+}
+
+.content-div {
+  word-break: break-all;
+}
+
+.timestamp-div {
+  margin-top: 0.5em;
+  font-style: italic;
+  font-size: small;
+  text-align: right;
+}
+
+.error-span {
+  color: red;
+}
+
+.comment-length-span {
+  margin-right: 1em;
+  font-style: italic;
+}
+
+.comment-div {
+  border: 1px solid gray;
+  padding: 0.5em;
+  margin-bottom: 0.75em;
+}

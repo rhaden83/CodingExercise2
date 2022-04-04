@@ -1,0 +1,25 @@
+<div class="main-div">
+  <div class="header-div">
+    "Simple Twitter"
+  </div>
+  <div class="flex-div row-div">
+    <label>Username:&nbsp;</label>
+    <input type="text" [(ngModel)]="username"/>
+  </div>
+  <div class="row-div">
+    <textarea rows="5" [(ngModel)]="comment" (ngModelChange)="updateCommentLength()"></textarea>
+  </div>
+  <div class="flex-div bottom-div">
+    <span class="error-span">{{error}}</span>
+    <div class="bottom-right-div">
+      <span class="comment-length-span">{{commentLength}}</span>
+      <button (click)="postComment()">Post</button>
+    </div>
+  </div>
+  <div *ngFor="let c of commentList" class="comment-div">
+    <b>@{{c.username}}</b>
+    <br/>
+    <div class="content-div">{{c.content}}</div>
+    <div class="timestamp-div">{{c.creationTimestamp | date:'M/d/yyyy h:mm a'}}</div>
+  </div>
+</div>
